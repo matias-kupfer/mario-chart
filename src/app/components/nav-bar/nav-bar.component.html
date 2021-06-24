@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="mat-elevation-z6 slim">
+    <button mat-button [routerLink]="'/overview'" routerLinkActive="active">OVERVIEW</button>
+    <button mat-button [routerLink]="'/record'" routerLinkActive="active">RECORD</button>
+    <button mat-button [routerLink]="'/users'" routerLinkActive="active">USERS</button>
+    <button mat-button *ngIf="authService.user$.getValue()" [routerLink]="'/profile'" routerLinkActive="active">PROFILE</button>
+    <button mat-button *ngIf="!authService.user$.getValue()" [routerLink]="'/login'" routerLinkActive="active">LOGIN</button>
+<!--    <span class="spacer"></span>-->
+<!--    <mat-icon *ngIf="toggleControl.value">bedtime</mat-icon>-->
+<!--    <mat-icon *ngIf="!toggleControl.value">brightness_5</mat-icon>-->
+<!--    <mat-slide-toggle [formControl]="toggleControl" class="mr-8"></mat-slide-toggle>-->
+  </mat-toolbar-row>
+</mat-toolbar>

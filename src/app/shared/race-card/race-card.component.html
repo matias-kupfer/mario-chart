@@ -1,0 +1,21 @@
+<div *ngIf="race && users">
+  <div class="card-header">
+    <!--    <img src="https://www.models-resource.com/resources/big_icons/12/11487.png" alt="Race flag">-->
+    <!--    <img src="https://upload.wikimedia.org/wikipedia/en/2/2d/Lakitu.png" alt="Race flag">-->
+    <h3>RACE · {{race.date.toMillis() | date:'dd/MM/yyyy'}} · @{{ getUserById(race.createdBy) }}</h3>
+    <div class="podium">
+      <img [src]="getUserImage(race.first)" alt="profile picture">
+      <p class="first">1 {{ getUserById(race.first) | uppercase}}</p>
+      <div>
+        <div>
+          <img [src]="getUserImage(race.second)" alt="profile picture">
+          <p class="second">2 {{ getUserById(race.second) | uppercase}}</p>
+        </div>
+        <div>
+          <img [src]="getUserImage(race.third)" alt="profile picture">
+          <p class="third">3 {{ getUserById(race.third) | uppercase}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

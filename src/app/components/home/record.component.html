@@ -1,0 +1,21 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="height">
+    <span>RECORD</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<br>
+<br>
+<ng-container>
+  <div class="timeline">
+    <div class="container left" *ngFor="let race of races">
+      <div class="content">
+        <app-race-card [race]="race" [users]="users"></app-race-card>
+      </div>
+    </div>
+  </div>
+<br>
+<br>
+<br>
+<br>
+</ng-container>
+

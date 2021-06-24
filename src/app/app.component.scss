@@ -1,0 +1,39 @@
+//@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
+mat-icon {
+  vertical-align: middle;
+}
+p {
+  font-size: 12px;
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  margin: 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+div.add-button {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  margin-bottom: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+app-nav-bar {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  z-index: 1000;
+}
+
+mat-progress-bar {
+  position: absolute;
+}
+
+

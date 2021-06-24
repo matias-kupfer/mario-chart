@@ -1,0 +1,72 @@
+@import "../../style/variables";
+
+
+* {
+  font-family: 'VT323', monospace !important;
+}
+
+div {
+  text-align: center;
+
+  div.card-header {
+    width: 90%;
+    display: inline-flex;
+    justify-content: space-evenly;
+    margin: 20px 0;
+    flex-direction: column;
+    background-color: $accent;
+    border-radius: 8px;
+
+    div.podium {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      img {
+        height: 100px;
+        width: auto;
+      }
+
+      p {
+        padding: 3px 15px;
+        border-radius: 8px;
+        font-size: 1.5em;
+      }
+
+      .first {
+        background-color: $first;
+      }
+
+      div {
+        display: flex;
+        justify-content: space-between;
+
+        div {
+          display: flex;
+          flex-direction: column;
+
+          img {
+            height: 80px;
+            width: auto;
+          }
+        }
+
+        .second {
+          transform: scale(1.1);
+          background-color: $second;
+        }
+
+        .third {
+          background-color: $third;
+        }
+      }
+    }
+  }
+
+  img {
+    width: 100px;
+    display: block;
+    margin: auto;
+  }
+}
+

@@ -1,0 +1,27 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="height">
+    <span>OVERVIEW</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div #containerRef *ngIf="!loaderService.loaderState$.getValue()">
+  <ngx-charts-bar-vertical-2d
+    [results]="chartData"
+    [view]="[containerRef.offsetWidth, 300]"
+    [scheme]="colorScheme"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legend]="showLegend"
+    [legendPosition]="legendPosition"
+    [showXAxisLabel]="showXAxisLabel"
+    [showYAxisLabel]="showYAxisLabel"
+    [xAxisLabel]="xAxisLabel"
+    [yAxisLabel]="yAxisLabel"
+    [groupPadding]="groupPadding"
+  >
+  </ngx-charts-bar-vertical-2d>
+</div>

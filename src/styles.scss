@@ -1,1 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: 'VT323', monospace;
+  max-width: 800px;
+}
+
+html, body {
+  height: 100%;
+  background-color: #303030;
+  display: block;
+  margin: auto;
+
+}
+
+body {
+  margin: 0;
+}
+
+.height {
+  height: 80px;
+  font-weight: lighter;
+}
+

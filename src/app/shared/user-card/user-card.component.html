@@ -1,0 +1,28 @@
+<div *ngIf="user">
+  <img [src]="user.imageUrl" alt="profile picture">
+  <br>
+  <h3 *ngIf="!first">{{ user.name | uppercase}}</h3>
+  <table>
+    <tr>
+      <th>FIRST</th>
+      <th>SECOND</th>
+      <th>THIRD</th>
+      <th>FOURTH</th>
+    </tr>
+    <tr>
+      <td>{{user.first}}</td>
+      <td>{{user.second}}</td>
+      <td>{{user.third}}</td>
+      <td>{{user.first}}</td>
+    </tr>
+    <tr *ngIf="first">
+      <td><img
+        src="https://mario.wiki.gallery/images/thumb/a/a4/GoldenMushroomMK8.png/1200px-GoldenMushroomMK8.png"
+        alt="crow" style="width: 50px;"
+      ></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</div>

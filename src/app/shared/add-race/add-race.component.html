@@ -1,0 +1,51 @@
+<form *ngIf="data.users.length" [formGroup]="form">
+  <h1>New Race</h1>
+  <mat-form-field appearance="fill">
+    <mat-label>First place</mat-label>
+    <mat-select formControlName="first" (selectionChange)="selected()">
+      <mat-option
+        *ngFor="let user of data.users" [value]="user.id" [disabled]="alreadySelected(user)"
+      >{{ user.name }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Second place</mat-label>
+    <mat-select formControlName="second" (selectionChange)="selected()">
+      <mat-option
+        *ngFor="let user of data.users" [value]="user.id" [disabled]="alreadySelected(user)"
+      >{{ user.name }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Third place</mat-label>
+    <mat-select formControlName="third" (selectionChange)="selected()">
+      <mat-option
+        *ngFor="let user of data.users" [value]="user.id" [disabled]="alreadySelected(user)"
+      >{{ user.name }}</mat-option>
+    </mat-select>
+    <br>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Fourth place</mat-label>
+    <mat-select formControlName="fourth" (selectionChange)="selected()">
+      <mat-option
+        *ngFor="let user of data.users" [value]="user.id" [disabled]="alreadySelected(user)"
+      >{{ user.name }}</mat-option>
+    </mat-select>
+    <br>
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button mat-button color="warn" (click)="onNoClick()">Cancel</button>
+    <button mat-button [disabled]="!form.valid" color="accent" (click)="onSave()">Save</button>
+  </div>
+</form>
+

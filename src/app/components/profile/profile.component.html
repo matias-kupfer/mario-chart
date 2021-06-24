@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="height">
+    <span>PROFILE</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div *ngIf="user">
+  <app-user-card [user]=" user"></app-user-card>
+<button mat-raised-button color="warn" (click)="logout()">Logout</button>
+</div>
+
+

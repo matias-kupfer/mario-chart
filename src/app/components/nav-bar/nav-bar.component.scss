@@ -1,0 +1,43 @@
+.slim {
+  height: 56px;
+}
+
+.height {
+  height: 80px;
+  font-weight: lighter;
+}
+
+.active {
+  font-weight: bold;
+  background-color: #64dd17;
+}
+
+button {
+  font-weight: lighter;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-icon {
+  margin-right: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+  .spacer {
+    flex: 0 !important;
+  }
+
+  mat-toolbar {
+    width: 90%;
+    margin: 10px auto;
+    border-radius: 10px;
+  }
+
+  mat-toolbar-row {
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-evenly;
+  }
+}

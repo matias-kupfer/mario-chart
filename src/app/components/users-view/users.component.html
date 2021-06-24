@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row class="height">
+    <span>USERS</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div>
+  <app-user-card *ngFor="let user of users; let i = index" [user]="user" [first]="i === 0" style="margin-right: 100px;"></app-user-card>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
