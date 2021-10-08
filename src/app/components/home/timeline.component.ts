@@ -8,10 +8,10 @@ import { CustomUser } from '../../interfaces/customUser';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './record.component.html',
-  styleUrls: ['./record.component.scss']
+  templateUrl: './timeline.component.html',
+  styleUrls: ['./timeline.component.scss']
 })
-export class RecordComponent implements OnInit {
+export class Timeline implements OnInit {
   races!: Race[];
   users!: CustomUser[];
   loading: boolean = true;

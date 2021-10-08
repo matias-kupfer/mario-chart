@@ -1,7 +1,7 @@
 <div *ngIf="user">
   <img [src]="user.imageUrl" alt="profile picture">
   <br>
-  <h3 *ngIf="!first">{{ user.name | uppercase}}</h3>
+  <h3>{{ user.name | uppercase}}</h3>
   <table>
     <tr>
       <th>FIRST</th>
@@ -13,7 +13,7 @@
       <td>{{user.first}}</td>
       <td>{{user.second}}</td>
       <td>{{user.third}}</td>
-      <td>{{user.first}}</td>
+      <td>{{user.fourth}}</td>
     </tr>
     <tr *ngIf="first">
       <td><img

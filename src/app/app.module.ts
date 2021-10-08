@@ -8,7 +8,7 @@ import { MaterialModule } from './material.module';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { DatePipe, HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { RecordComponent } from './components/home/record.component';
+import { Timeline } from './components/home/timeline.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UsersComponent } from './components/users-view/users.component';
 import { ProfileComponent } from './components/profile/profile.component';
@@ -32,7 +32,7 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
   declarations: [
     AppComponent,
     NavBarComponent,
-    RecordComponent,
+    Timeline,
     UsersComponent,
     ProfileComponent,
     UserCardComponent,

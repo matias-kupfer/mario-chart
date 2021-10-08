@@ -4,13 +4,9 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <br>
-<br>
-<br>
-<br>
-<br>
 <div #containerRef *ngIf="!loaderService.loaderState$.getValue()">
   <ngx-charts-bar-vertical-2d
-    [results]="chartData"
+    [results]="verticalChartData"
     [view]="[containerRef.offsetWidth, 300]"
     [scheme]="colorScheme"
     [xAxis]="showXAxis"
@@ -24,4 +20,25 @@
     [groupPadding]="groupPadding"
   >
   </ngx-charts-bar-vertical-2d>
+
+  <br>
+
+  <ngx-charts-pie-chart
+    [view]="[containerRef.offsetWidth, 300]"
+    [scheme]="colorScheme"
+    [results]="pieChartData"
+    [legend]="false"
+    [legendPosition]="legendPosition"
+    [labels]="true"
+    [doughnut]="true"
+  >
+  </ngx-charts-pie-chart>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
 </div>

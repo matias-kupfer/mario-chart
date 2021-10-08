@@ -1,14 +1,20 @@
-<mat-progress-bar mode="indeterminate" color="accent" *ngIf="showLoader"></mat-progress-bar>
-<div class="mat-app-background" style="min-height: 100vh;">
-  <router-outlet #o="outlet"></router-outlet>
+<div class="dfdsf">
 
-  <div class="add-button">
-    <button mat-fab *ngIf="authService.user$.getValue()" color="accent" (click)="addRace()"><mat-icon>add</mat-icon></button>
+  <mat-progress-bar mode="indeterminate" color="accent" *ngIf="showLoader"></mat-progress-bar>
+  <div class="mat-app-background" style="min-height: 100vh;">
+    <router-outlet #o="outlet"></router-outlet>
+
+    <div class="add-button">
+      <button mat-fab *ngIf="authService.user$.getValue()" color="accent" (click)="addRace()">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+
+    <p>Made with
+      <mat-icon style="color: red; transform: scale(0.8)">favorite</mat-icon>
+      by <a href="https://github.com/matiascfgm" target="_blank">Matias Kupfer</a>
+    </p>
   </div>
+  <app-nav-bar [title]="'Mario-chart'"></app-nav-bar>
 
-  <p>Made with
-    <mat-icon style="color: red; transform: scale(0.8)">favorite</mat-icon>
-    by <a href="https://github.com/matiascfgm" target="_blank">Matias Kupfer</a>
-  </p>
 </div>
-<app-nav-bar [title]="'Mario-chart'"></app-nav-bar>

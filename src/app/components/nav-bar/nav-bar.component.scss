@@ -16,28 +16,23 @@ button {
   font-weight: lighter;
 }
 
-.spacer {
-  flex: 1 1 auto;
-}
 
 mat-icon {
   margin-right: 10px;
 }
 
-@media only screen and (max-width: 1000px) {
-  .spacer {
-    flex: 0 !important;
-  }
+.spacer {
+  flex: 0 !important;
+}
 
-  mat-toolbar {
-    width: 90%;
-    margin: 10px auto;
-    border-radius: 10px;
-  }
+mat-toolbar {
+  width: 90%;
+  margin: 10px auto;
+  border-radius: 10px;
+}
 
-  mat-toolbar-row {
-    border-radius: 10px;
-    display: flex;
-    justify-content: space-evenly;
-  }
+mat-toolbar-row {
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
 }

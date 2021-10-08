@@ -12,7 +12,7 @@ import { ConfigEnum } from '../../enums/config.enum';
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.scss']
 })
-export class ProfileComponent implements OnInit, OnDestroy {
+export class ProfileComponent implements OnInit {
   user: CustomUser | null;
 
   constructor (
@@ -28,9 +28,6 @@ export class ProfileComponent implements OnInit, OnDestroy {
   ngOnInit (): void {
   }
 
-  public ngOnDestroy (): void {
-    console.log('fuck you');
-  }
 
   public logout () {
     this.authService.logout().then(() => {

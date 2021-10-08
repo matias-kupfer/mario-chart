@@ -5,7 +5,7 @@ import { FirestoreService } from '../../core/services/firebase/firestore.service
 import { ActivatedRoute } from '@angular/router';
 import { LoaderService } from '../../core/services/loader.service';
 import { LegendPosition } from '@swimlane/ngx-charts';
-import { BarVerticalChart } from '../../interfaces/chartData';
+import { BarVerticalChartData, PieChartData } from '../../interfaces/chartData';
 
 
 @Component({
@@ -17,8 +17,8 @@ export class OverviewComponent implements OnInit {
   races!: Race[];
   users!: CustomUser[];
 
-  chartData!: BarVerticalChart[];
-  view: any = [200, 200];
+  verticalChartData!: BarVerticalChartData[];
+  pieChartData!: PieChartData[];
   groupPadding: number = 30;
   // options
   showXAxis: boolean = true;
@@ -30,7 +30,7 @@ export class OverviewComponent implements OnInit {
   showYAxisLabel: boolean = false;
   xAxisLabel = 'Position';
   colorScheme = {
-    domain: ['gold', 'silver', 'coral']
+    domain: ['gold', 'silver', 'coral', '#84c9d2']
   };
   schemeType: any = 'linear';
 
@@ -47,17 +47,26 @@ export class OverviewComponent implements OnInit {
       this.firestoreService.getUsersStream().subscribe((users) => {
         this.loaderService.hide();
         this.users = users;
-        this.generateData();
+        this.generateVerticalChartData();
+        this.generatePieChartData();
       });
     });
   }
 
-  generateData () {
-    this.chartData = [];
+  generateVerticalChartData () {
+    this.verticalChartData = [];
     this.users.forEach((user: CustomUser) => {
-      this.chartData.push({ name: 'FIRST', series: [{ name: this.getUserById(user.id), value: user.first }] });
-      this.chartData.push({ name: 'SECOND', series: [{ name: this.getUserById(user.id), value: user.second }] });
-      this.chartData.push({ name: 'THIRD', series: [{ name: this.getUserById(user.id), value: user.third }] });
+      this.verticalChartData.push({ name: 'FIRST', series: [{ name: this.getUserById(user.id), value: user.first }] });
+      this.verticalChartData.push(
+        { name: 'SECOND', series: [{ name: this.getUserById(user.id), value: user.second }] });
+      this.verticalChartData.push({ name: 'THIRD', series: [{ name: this.getUserById(user.id), value: user.third }] });
+    });
+  }
+
+  generatePieChartData () {
+    this.pieChartData = [];
+    this.users.forEach((user: CustomUser) => {
+      this.pieChartData.push({ name: user.name, value: user.first, extra: { code: 'es' } });
     });
   }
 
